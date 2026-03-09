@@ -1,0 +1,37 @@
+{
+  "name": "aeon-ide",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "open-source/aeon-ide/src",
+  "tags": ["scope:open-source", "type:lib"],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'aeon-ide is source-only via TS path aliases'"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "command": "bun ../../scripts/bun-isolated-runner.ts src --preload ../../bun.preload.ts",
+        "cwd": "{workspaceRoot}/open-source/aeon-ide"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "../../node_modules/.bin/tsc -p tsconfig.json --noEmit",
+        "cwd": "open-source/aeon-ide"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "bunx eslint src --ext .ts,.tsx",
+        "cwd": "open-source/aeon-ide"
+      }
+    }
+  }
+}

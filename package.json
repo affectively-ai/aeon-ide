@@ -1,1 +1,29 @@
-{"name":"@affectively/aeon-ide","version":"0.0.1","private":true}
+{
+  "name": "@affectively/aeon-ide",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Aeon IDE — UI components and hooks for the Aeon Container execution environment",
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/*": "./src/components/*.tsx",
+    "./components/aeon-container-ide.css": "./src/components/aeon-container-ide.css",
+    "./hooks/*": "./src/hooks/*.ts"
+  },
+  "scripts": {
+    "test": "bun ../../scripts/bun-isolated-runner.ts src --preload ../../bun.preload.ts"
+  },
+  "dependencies": {
+    "@affectively/aeon-container": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "@emotions-app/shared-ui": "workspace:*",
+    "yjs": "^13.6.29"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "typescript": "^5.9.3"
+  },
+  "author": "Edgework DAO",
+  "license": "MIT"
+}
