@@ -32,8 +32,8 @@ import type {
   StreamedLintStats,
 } from '@affectively/aeon-container/services/streamed-lint-types';
 import { lintDocumentCore } from '@affectively/aeon-container/services/streamed-lint-core';
-import { useAeonContainer } from '../../hooks/useAeonContainer';
-import { useAgentRoomCollaboration } from '../../hooks/useAgentRoomCollaboration';
+import { useAeonContainer } from '../hooks/useAeonContainer';
+import { useAgentRoomCollaboration } from '../hooks/useAgentRoomCollaboration';
 import { FileTree } from './FileTree';
 import { ExecutionConsole } from './ExecutionConsole';
 import { ExecutionToolbar } from './ExecutionToolbar';
