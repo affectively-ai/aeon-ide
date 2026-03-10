@@ -22,7 +22,7 @@ import {
   getYjsDoc,
   initializePeerSync,
   subscribeToSyncStatus,
-} from '@emotions-app/shared-ui/services/dash/dashPeerSyncService';
+} from '@affectively/shared-ui/services/dash/dashPeerSyncService';
 
 // ── Types ────────────────────────────────────────────────────────
 

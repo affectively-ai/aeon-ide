@@ -1,8 +1,8 @@
 {
   "name": "@affectively/aeon-ide",
-  "version": "0.1.0",
+  "version": "5.0.0",
   "type": "module",
-  "description": "Aeon IDE — UI components and hooks for the Aeon Container execution environment",
+  "description": "Aeon IDE \u2014 UI components and hooks for the Aeon Container execution environment",
   "exports": {
     ".": "./src/index.ts",
     "./components/*": "./src/components/*.tsx",
@@ -17,13 +17,13 @@
   },
   "peerDependencies": {
     "react": "^19.0.0",
-    "@emotions-app/shared-ui": "workspace:*",
+    "@affectively/shared-ui": "workspace:*",
     "yjs": "^13.6.29"
   },
   "devDependencies": {
     "@types/react": "19.2.14",
     "typescript": "^5.9.3"
   },
-  "author": "Edgework DAO",
+  "author": "Taylor William Buley (https://buley.fyi)",
   "license": "MIT"
 }
