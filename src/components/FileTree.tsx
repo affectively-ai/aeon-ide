@@ -36,6 +36,7 @@ function getFileIcon(language?: string): string {
   const icons: Record<string, string> = {
     typescript: 'TS',
     javascript: 'JS',
+    tla: 'TL',
     go: 'GO',
     python: 'PY',
     rust: 'RS',

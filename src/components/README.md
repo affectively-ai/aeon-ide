@@ -10,7 +10,7 @@ Browser-first Aeon IDE container components used by `AeonContainerIDE`.
 - `AeonIdeEditorPane.tsx` - revision scrubber and editor surface components
 - `AeonIdePanels.tsx` - command CLI, action launcher, and room collaboration panel
 - `aeon-ide-commands.ts` - action registry, CLI command execution, and keyboard shortcut orchestration
-- `aeon-ide-helpers.ts` - editor defaults, formatting helpers, and language planning utilities
+- `aeon-ide-helpers.ts` - editor defaults, formatting helpers, and language planning utilities (including TLA defaults/aliases)
 - `ExecutionToolbar.tsx` - top execution controls
 - `FileTree.tsx` - filesystem explorer sidebar
 - `ExecutionConsole.tsx` - execution logs panel

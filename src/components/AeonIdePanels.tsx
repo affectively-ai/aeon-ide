@@ -146,7 +146,7 @@ export function AeonIdeCommandCli({
               onChange={(event) => onInputChange(event.target.value)}
               onKeyDown={onInputKeyDown}
               className="aeon-command-cli-input"
-              placeholder="run | lint | format | language go | goto 128"
+              placeholder="run | lint | format | language tla | goto 128"
               aria-label="IDE command input"
               autoCorrect="off"
               autoCapitalize="off"

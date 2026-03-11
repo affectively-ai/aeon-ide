@@ -9,6 +9,7 @@ const LANGUAGE_BY_EXTENSION: Record<string, ContainerLanguage> = {
   jsx: 'javascript',
   ts: 'typescript',
   tsx: 'typescript',
+  tla: 'tla',
   go: 'go',
   py: 'python',
   rs: 'rust',
@@ -40,6 +41,8 @@ export function getDefaultContent(path: string): string {
       return '// Rust\n\nfn main() {\n    println!("hello from aeon container");\n}\n';
     case 'lua':
       return '-- Lua\n\nfunction main()\n  print("hello from aeon container")\nend\n\nmain()\n';
+    case 'tla':
+      return '------------------------------ MODULE Spec ------------------------------\nEXTENDS Naturals\n\nVARIABLE x\n\nInit == x = 0\nNext == x\\\' = x + 1\nSpec == Init /\\ []Next\n\n=============================================================================\n';
     case 'json':
       return '{\n  "name": "aeon-container",\n  "version": "1.0.0"\n}\n';
     case 'md':
@@ -91,6 +94,8 @@ export function parseLanguageAlias(
     javascript: 'javascript',
     ts: 'typescript',
     typescript: 'typescript',
+    tla: 'tla',
+    'tla+': 'tla',
     go: 'go',
     golang: 'go',
     py: 'python',
@@ -118,6 +123,15 @@ export function buildStaticAnalysisPlan(language: ContainerLanguage): string[] {
       'Scan for formatting drift and control-flow bracket mismatch.',
       'Detect suspicious fmt usage/import inconsistencies.',
       'Surface refactor actions for package structure and naming.',
+    ];
+  }
+
+  if (language === 'tla') {
+    return [
+      'Parse TLA module header, EXTENDS clause, and footer boundaries.',
+      'Round-trip module rendering to validate canonical structure.',
+      'Parse any TLC config headings and normalize section ordering.',
+      'Report invariants/properties coverage counts for quick review.',
     ];
   }
 

@@ -48,6 +48,7 @@ interface ExecutionToolbarProps {
 const LANGUAGES: { value: ContainerLanguage; label: string }[] = [
   { value: 'javascript', label: 'JavaScript' },
   { value: 'typescript', label: 'TypeScript' },
+  { value: 'tla', label: 'TLA+' },
   { value: 'go', label: 'Go' },
   { value: 'python', label: 'Python' },
   { value: 'rust', label: 'Rust' },

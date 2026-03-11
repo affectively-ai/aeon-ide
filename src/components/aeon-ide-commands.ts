@@ -363,6 +363,13 @@ export function buildIdeActions({
       run: () => applyLanguageSelection('typescript'),
     },
     {
+      id: 'lang-tla',
+      label: 'Language: TLA+',
+      hint: 'Switch active language',
+      keywords: ['language', 'tla', 'tla+'],
+      run: () => applyLanguageSelection('tla'),
+    },
+    {
       id: 'lang-go',
       label: 'Language: Go',
       hint: 'Switch active language',
@@ -425,7 +432,7 @@ export function executeIdeCliCommand({
 
   if (command === 'help') {
     appendCliEntry(
-      'Commands: help, run, scaffold [flux|mcp], lint [workspace], format [workspace], build [file|workspace], replay [play|pause|speed <0.5|1|2|4>], lock, unlock, lock override, snapshot, receipts, repo ingest, repo refresh, repo status, repo symbols [query], diagnostics, undo, redo, restore, latest, language <ts|go|py|js>, goto <line>, plan, actions, clear',
+      'Commands: help, run, scaffold [flux|mcp], lint [workspace], format [workspace], build [file|workspace], replay [play|pause|speed <0.5|1|2|4>], lock, unlock, lock override, snapshot, receipts, repo ingest, repo refresh, repo status, repo symbols [query], diagnostics, undo, redo, restore, latest, language <ts|tla|go|py|js>, goto <line>, plan, actions, clear',
       'info'
     );
     return;
