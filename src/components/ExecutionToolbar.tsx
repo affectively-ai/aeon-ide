@@ -53,6 +53,7 @@ const LANGUAGES: { value: ContainerLanguage; label: string }[] = [
   { value: 'python', label: 'Python' },
   { value: 'rust', label: 'Rust' },
   { value: 'lua', label: 'Lua' },
+  { value: 'gnosis', label: 'Gnosis' },
 ];
 
 // ── Component ────────────────────────────────────────────────────

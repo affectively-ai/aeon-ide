@@ -14,6 +14,8 @@ const LANGUAGE_BY_EXTENSION: Record<string, ContainerLanguage> = {
   py: 'python',
   rs: 'rust',
   lua: 'lua',
+  gg: 'gnosis',
+  ggl: 'gnosis',
 };
 
 export function inferLanguageFromPath(path: string): ContainerLanguage | null {
@@ -39,6 +41,9 @@ export function getDefaultContent(path: string): string {
       return '# Python\n\ndef main():\n    print("hello from aeon container")\n\nmain()\n';
     case 'rs':
       return '// Rust\n\nfn main() {\n    println!("hello from aeon container");\n}\n';
+    case 'gg':
+    case 'ggl':
+      return '// Gnosis Topological Graph\n\n(input)-[:FORK]->(a|b)\n';
     case 'lua':
       return '-- Lua\n\nfunction main()\n  print("hello from aeon container")\nend\n\nmain()\n';
     case 'tla':
@@ -103,6 +108,8 @@ export function parseLanguageAlias(
     rs: 'rust',
     rust: 'rust',
     lua: 'lua',
+    gnosis: 'gnosis',
+    gg: 'gnosis',
   };
   return lookup[normalized] ?? null;
 }
@@ -141,6 +148,15 @@ export function buildStaticAnalysisPlan(language: ContainerLanguage): string[] {
       'Detect long-line and trailing whitespace readability issues.',
       'Detect debug prints and brittle branch layout patterns.',
       'Surface refactor actions for type hints and import hygiene.',
+    ];
+  }
+
+  if (language === 'gnosis') {
+    return [
+      'Verify topological graph syntax and node/edge declarations.',
+      'Check for imperative code pollution (rejected keywords).',
+      'Analyze covering space for Betti number consistency.',
+      'Surface execution trace provenance and topological metrics.',
     ];
   }
 

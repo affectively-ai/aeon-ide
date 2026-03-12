@@ -37,6 +37,7 @@ import { useAgentRoomCollaboration } from '../hooks/useAgentRoomCollaboration';
 import { FileTree } from './FileTree';
 import { ExecutionConsole } from './ExecutionConsole';
 import { ExecutionToolbar } from './ExecutionToolbar';
+import { GnosisViz } from './GnosisViz';
 import { CapabilityBadge } from './CapabilityBadge';
 import {
   AeonIdeCodeEditor,
@@ -217,6 +218,12 @@ export function AeonContainerIDE({
   const [cliHistory, setCliHistory] = useState<string[]>([]);
   const [cliHistoryIndex, setCliHistoryIndex] = useState(-1);
   const [diagnosticsStripEnabled, setDiagnosticsStripEnabled] = useState(true);
+
+  // Topological state for Gnosis
+  const [lastTopologicalResult, setLastTopologicalResult] = useState<{
+    ast: any;
+    b1: number;
+  } | null>(null);
   const [activeRepoId, setActiveRepoId] = useState<string | null>(null);
   const [lockNowMs, setLockNowMs] = useState(() => Date.now());
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -656,6 +663,13 @@ export function AeonContainerIDE({
       editorContent,
       language
     )) as ContainerExecuteResult;
+
+    if (result.ast) {
+      setLastTopologicalResult({
+        ast: result.ast,
+        b1: result.b1 ?? 0,
+      });
+    }
 
     // Notify parent of file changes
     if (result.filesystem_changes && onFilesChanged) {
@@ -2239,9 +2253,20 @@ export function App() {
             onEditorChange={handleEditorChange}
             onEditorScroll={handleEditorScroll}
             onJumpToLine={jumpToLine}
-          />
+            language={language}
+            />
+          {lastTopologicalResult && language === 'gnosis' && (
+            <div className="h-64 shrink-0 border-t border-[var(--aeon-border)] dark:border-zinc-800">
+              <GnosisViz
+                ast={lastTopologicalResult.ast}
+                b1={lastTopologicalResult.b1}
+                isExecuting={isExecuting}
+              />
+            </div>
+          )}
 
           {/* Console (resizable) */}
+
           <div className="h-48 shrink-0">
             <ExecutionConsole
               logs={logs}
