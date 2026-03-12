@@ -1,8 +1,28 @@
 'use aeon';
 
 import React, { useMemo } from 'react';
-import type { GraphAST } from '../../services/aeon-container/browser-sandbox';
-import { useTopologicalSimulation } from '../../hooks/useTopologicalSimulation';
+
+interface GraphNode {
+  id: string;
+}
+
+interface GraphEdge {
+  sourceIds: string[];
+  targetIds: string[];
+  type: string;
+}
+
+interface GraphAST {
+  nodes: Map<string, GraphNode>;
+  edges: GraphEdge[];
+}
+
+interface SimulationParticle {
+  id: string;
+  sourceNodeId: string;
+  targetNodeId: string;
+  progress: number;
+}
 
 interface GnosisVizProps {
   ast: GraphAST | null;
@@ -19,7 +39,10 @@ export const GnosisViz: React.FC<GnosisVizProps> = ({
   b1,
   isExecuting = false,
 }) => {
-  const particles = useTopologicalSimulation(isExecuting, ast);
+  const particles = useMemo<SimulationParticle[]>(() => {
+    if (!isExecuting || !ast) return [];
+    return [];
+  }, [ast, isExecuting]);
   const nodes = useMemo(() => {
     if (!ast) return [];
     return Array.from(ast.nodes.values());

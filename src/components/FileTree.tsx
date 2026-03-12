@@ -24,7 +24,7 @@ interface FileTreeProps {
 interface TreeNode {
   name: string;
   path: string;
-  type: 'file' | 'directory';
+  type: 'file' | 'module' | 'directory';
   language?: string;
   dirty?: boolean;
   children: TreeNode[];

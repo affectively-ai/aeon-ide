@@ -35,6 +35,7 @@ interface AeonIdeRevisionScrubberProps {
 interface AeonIdeCodeEditorProps {
   activeFile: string | null;
   editorContent: string;
+  language?: string;
   previewDiffers: boolean;
   editorLockedByOther: boolean;
   lockOwnerId: string | null;

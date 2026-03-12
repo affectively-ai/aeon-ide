@@ -2162,6 +2162,15 @@ export function App() {
     toggleCliPanel,
   ]);
 
+  const lockExpiresAtMs =
+    typeof lockState.expires_at === 'number'
+      ? lockState.expires_at
+      : Number(lockState.expires_at) || undefined;
+  const lockHeartbeatAtMs =
+    typeof lockState.heartbeat_at === 'number'
+      ? lockState.heartbeat_at
+      : Number(lockState.heartbeat_at) || undefined;
+
   return (
     <div className="aeon-container-ide relative flex h-full w-full flex-col rounded-lg border border-[var(--aeon-border)] bg-white dark:border-zinc-800 dark:bg-zinc-900">
       {/* Toolbar */}
@@ -2173,8 +2182,8 @@ export function App() {
         connected={connected}
         lockOwnerId={effectiveLockOwnerId}
         lockToggleDisabled={editorLockedByOther}
-        lockExpiresAt={lockState.expires_at}
-        lockHeartbeatAt={lockState.heartbeat_at}
+        lockExpiresAt={lockExpiresAtMs}
+        lockHeartbeatAt={lockHeartbeatAtMs}
         lockNowMs={lockNowMs}
         lockOverrideDisabled={isLockExternallyControlled}
         onRun={handleRun}
