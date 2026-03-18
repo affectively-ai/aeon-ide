@@ -7,8 +7,34 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "composite": true
+    "composite": true,
+    "paths": {
+      "@a0n/aeon-container/services/types": [
+        "open-source/aeon-ide/src/package-shims.d.ts"
+      ],
+      "@a0n/aeon-container/services/browser-sandbox": [
+        "open-source/aeon-ide/src/package-shims.d.ts"
+      ],
+      "@a0n/aeon-container/services/persistent-fs": [
+        "open-source/aeon-ide/src/package-shims.d.ts"
+      ],
+      "@a0n/aeon-container/services/streamed-lint-types": [
+        "open-source/aeon-ide/src/package-shims.d.ts"
+      ],
+      "@a0n/aeon-container/services/streamed-lint-core": [
+        "open-source/aeon-ide/src/package-shims.d.ts"
+      ],
+      "@a0n/aeon-container/services/streamed-lint-client": [
+        "open-source/aeon-ide/src/package-shims.d.ts"
+      ],
+      "@a0n/aeon-container/services/agent-room-client": [
+        "open-source/aeon-ide/src/package-shims.d.ts"
+      ],
+      "@affectively/shared-ui/services/dash/dashPeerSyncService": [
+        "open-source/aeon-ide/src/package-shims.d.ts"
+      ]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist", "**/__tests__/**"]
 }

@@ -292,3 +292,8 @@ export function AeonIdeCodeEditor({
     </div>
   );
 }
+
+export const AeonIdeEditorPane = {
+  CodeEditor: AeonIdeCodeEditor,
+  RevisionScrubber: AeonIdeRevisionScrubber,
+} as const;

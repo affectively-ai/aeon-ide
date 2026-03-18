@@ -406,3 +406,9 @@ export function AeonIdeCollaborationPanel({
     </aside>
   );
 }
+
+export const AeonIdePanels = {
+  ActionLauncher: AeonIdeActionLauncher,
+  CollaborationPanel: AeonIdeCollaborationPanel,
+  CommandCli: AeonIdeCommandCli,
+} as const;
