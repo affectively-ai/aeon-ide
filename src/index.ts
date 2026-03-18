@@ -1,8 +1,8 @@
 /**
- * @affectively/aeon-ide
+ * @a0n/aeon-ide
  *
  * IDE UI components and hooks for the Aeon Container execution environment.
- * Depends on @affectively/aeon-container for runtime services.
+ * Depends on @a0n/aeon-container for runtime services.
  */
 
 // ── Components ──────────────────────────────────────────────────────

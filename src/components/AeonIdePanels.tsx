@@ -4,7 +4,7 @@ import React from 'react';
 import type {
   AgentRoomSnapshotPayload,
   AgentRoomTask,
-} from '@affectively/aeon-container/services/agent-room-client';
+} from '@a0n/aeon-container/services/agent-room-client';
 
 interface ActionLauncherItem {
   id: string;

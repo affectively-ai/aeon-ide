@@ -1,6 +1,6 @@
-# @affectively/aeon-ide
+# @a0n/aeon-ide
 
-`@affectively/aeon-ide` provides the UI components and hooks for the Aeon Container execution environment.
+`@a0n/aeon-ide` provides the UI components and hooks for the Aeon Container execution environment.
 
 The fair brag is that this package already covers the main pieces people expect from an embedded coding surface: file tree, editor pane, execution toolbar, console, collaboration hooks, and the higher-level `AeonContainerIDE` wrapper that ties them together.
 
@@ -19,13 +19,13 @@ The fair brag is that this package already covers the main pieces people expect 
 ## Why People May Like It
 
 - it gives you a ready-made IDE shell instead of only loose widgets,
-- it stays close to `@affectively/aeon-container`, so the UI and runtime packages match,
+- it stays close to `@a0n/aeon-container`, so the UI and runtime packages match,
 - collaboration is part of the package shape, not an afterthought,
 - and the surface is small enough to understand without feeling toy-sized.
 
 ## Dependency
 
-This package depends on [`@affectively/aeon-container`](../aeon-container/README.md) for the execution, filesystem, and collaboration runtime services underneath the UI.
+This package depends on [`@a0n/aeon-container`](../aeon-container/README.md) for the execution, filesystem, and collaboration runtime services underneath the UI.
 
 ## Why This README Is Grounded
 

@@ -1,6 +1,6 @@
 'use aeon';
 
-import type { ContainerLanguage } from '@affectively/aeon-container/services/types';
+import type { ContainerLanguage } from '@a0n/aeon-container/services/types';
 
 export const LOCAL_LOCK_OWNER_ID = 'you';
 

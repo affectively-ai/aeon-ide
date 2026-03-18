@@ -4,7 +4,7 @@ import {
   type AgentRoomPresenceStatus,
   type AgentRoomSnapshotPayload,
   type AgentRoomTask,
-} from '@affectively/aeon-container/services/agent-room-client';
+} from '@a0n/aeon-container/services/agent-room-client';
 
 const DEFAULT_POLL_MS = 3500;
 

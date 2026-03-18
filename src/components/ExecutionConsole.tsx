@@ -8,7 +8,7 @@
  */
 
 import React, { useRef, useEffect } from 'react';
-import type { ContainerExecuteResult } from '@affectively/aeon-container/services/types';
+import type { ContainerExecuteResult } from '@a0n/aeon-container/services/types';
 
 // ── Types ────────────────────────────────────────────────────────
 

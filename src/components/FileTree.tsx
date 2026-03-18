@@ -8,7 +8,7 @@
  */
 
 import React, { useState, useCallback } from 'react';
-import type { FileEntry } from '@affectively/aeon-container/services/types';
+import type { FileEntry } from '@a0n/aeon-container/services/types';
 
 // ── Types ────────────────────────────────────────────────────────
 

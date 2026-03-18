@@ -6,8 +6,8 @@
  */
 
 import { useState, useCallback, useEffect, useRef } from 'react';
-import { BrowserSandbox } from '@affectively/aeon-container/services/browser-sandbox';
-import { PersistentFS } from '@affectively/aeon-container/services/persistent-fs';
+import { BrowserSandbox } from '@a0n/aeon-container/services/browser-sandbox';
+import { PersistentFS } from '@a0n/aeon-container/services/persistent-fs';
 import type {
   ContainerExecuteResult,
   ContainerLanguage,
@@ -15,7 +15,7 @@ import type {
   ContainerLockState,
   ExecutionReceipt,
   RepoIngestInput,
-} from '@affectively/aeon-container/services/types';
+} from '@a0n/aeon-container/services/types';
 import type { ExecutionLogEntry } from '../components/ExecutionConsole';
 import {
   disconnectPeerSync,

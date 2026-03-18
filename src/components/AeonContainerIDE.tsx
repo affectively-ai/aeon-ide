@@ -21,17 +21,17 @@ import type {
   ContainerLanguage,
   ContainerExecuteResult,
   AeonFSChange,
-} from '@affectively/aeon-container/services/types';
+} from '@a0n/aeon-container/services/types';
 import {
   StreamedLintClient,
   type StreamedLintHandle,
-} from '@affectively/aeon-container/services/streamed-lint-client';
+} from '@a0n/aeon-container/services/streamed-lint-client';
 import type {
   StreamedLintDiagnostic,
   StreamedLintLanguage,
   StreamedLintStats,
-} from '@affectively/aeon-container/services/streamed-lint-types';
-import { lintDocumentCore } from '@affectively/aeon-container/services/streamed-lint-core';
+} from '@a0n/aeon-container/services/streamed-lint-types';
+import { lintDocumentCore } from '@a0n/aeon-container/services/streamed-lint-core';
 import { useAeonContainer } from '../hooks/useAeonContainer';
 import { useAgentRoomCollaboration } from '../hooks/useAgentRoomCollaboration';
 import { FileTree } from './FileTree';
@@ -1091,7 +1091,7 @@ export function AeonContainerIDE({
                 react: '^18.2.0',
                 'react-dom': '^18.2.0',
                 '@affectively/edgework-sdk': 'workspace:*',
-                '@affectively/aeon-flux': 'workspace:*',
+                '@a0n/aeon-flux': 'workspace:*',
               },
               scripts: {
                 build: 'aeon build',

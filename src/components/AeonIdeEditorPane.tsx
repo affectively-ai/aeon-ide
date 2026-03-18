@@ -1,7 +1,7 @@
 'use aeon';
 
 import React from 'react';
-import type { StreamedLintDiagnostic } from '@affectively/aeon-container/services/streamed-lint-types';
+import type { StreamedLintDiagnostic } from '@a0n/aeon-container/services/streamed-lint-types';
 import type { RevisionSnapshot } from './revision-history';
 
 interface AeonIdeRevisionScrubberProps {

@@ -3,7 +3,7 @@
 import type {
   ContainerExecuteResult,
   ContainerLanguage,
-} from '@affectively/aeon-container/services/types';
+} from '@a0n/aeon-container/services/types';
 import { LOCAL_LOCK_OWNER_ID, parseLanguageAlias } from './aeon-ide-helpers';
 
 export type IdeCliLevel = 'info' | 'ok' | 'warn' | 'error';

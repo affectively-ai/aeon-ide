@@ -1,5 +1,5 @@
 {
-  "name": "@affectively/aeon-ide",
+  "name": "@a0n/aeon-ide",
   "version": "5.0.0",
   "type": "module",
   "description": "Aeon IDE \u2014 UI components and hooks for the Aeon Container execution environment",
@@ -13,7 +13,7 @@
     "test": "bun ../../scripts/bun-isolated-runner.ts src --preload ../../bun.preload.ts"
   },
   "dependencies": {
-    "@affectively/aeon-container": "workspace:*"
+    "@a0n/aeon-container": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.0.0",

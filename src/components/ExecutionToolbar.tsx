@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import type { ContainerLanguage } from '@affectively/aeon-container/services/types';
+import type { ContainerLanguage } from '@a0n/aeon-container/services/types';
 
 // ── Types ────────────────────────────────────────────────────────
 
