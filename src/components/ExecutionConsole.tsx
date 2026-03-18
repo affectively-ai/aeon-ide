@@ -132,6 +132,10 @@ export function ExecutionConsole({
 
         {logs.map((entry) => {
           const outcomeInfo = getOutcomeStyle(entry.result.outcome);
+          const executionProof =
+            entry.result.execution_proof == null
+              ? null
+              : String(entry.result.execution_proof);
           return (
             <div key={entry.id} className="mb-3 last:mb-0">
               {/* Execution header */}
@@ -145,10 +149,10 @@ export function ExecutionConsole({
                 <span className="text-[var(--aeon-text-tertiary)] dark:text-zinc-600">
                   {entry.result.language}
                 </span>
-                {entry.result.execution_proof && (
+                {executionProof && (
                   <span
                     className="text-emerald-600/60 dark:text-emerald-400/60"
-                    title={`ZK proof: ${entry.result.execution_proof}`}
+                    title={`ZK proof: ${executionProof}`}
                   >
                     ZK
                   </span>

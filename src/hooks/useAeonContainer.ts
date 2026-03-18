@@ -103,6 +103,14 @@ interface UseAeonContainerReturn {
   save: () => Promise<void>;
 }
 
+function createEmptyLockState(containerId: string): ContainerLockState {
+  return {
+    container_id: containerId,
+    owner_did: undefined,
+    lease_id: undefined,
+  };
+}
+
 // ── Hook ─────────────────────────────────────────────────────────
 
 export function useAeonContainer(
@@ -131,11 +139,9 @@ export function useAeonContainer(
   const [connected, setConnected] = useState(false);
   const [syncing, setSyncing] = useState(false);
   const [dirty, setDirty] = useState(false);
-  const [lockState, setLockState] = useState<ContainerLockState>({
-    container_id: containerId,
-    owner_did: null,
-    lease_id: null,
-  });
+  const [lockState, setLockState] = useState<ContainerLockState>(
+    createEmptyLockState(containerId)
+  );
   const [logs, setLogs] = useState<ExecutionLogEntry[]>([]);
   const [executionMode, setExecutionMode] = useState<'browser' | 'edge'>(
     mode === 'edge' ? 'edge' : 'browser'
@@ -344,11 +350,7 @@ export function useAeonContainer(
   const refreshLockState =
     useCallback(async (): Promise<ContainerLockState> => {
       if (!fsRef.current) {
-        const fallback: ContainerLockState = {
-          container_id: containerId,
-          owner_did: null,
-          lease_id: null,
-        };
+        const fallback = createEmptyLockState(containerId);
         setLockState(fallback);
         return fallback;
       }
@@ -417,11 +419,7 @@ export function useAeonContainer(
   const releaseLock = useCallback(async (): Promise<void> => {
     if (!fsRef.current) return;
     await fsRef.current.releaseLock(lockState.lease_id || undefined);
-    setLockState({
-      container_id: containerId,
-      owner_did: null,
-      lease_id: null,
-    });
+    setLockState(createEmptyLockState(containerId));
   }, [containerId, lockState.lease_id]);
 
   const overrideLock = useCallback(

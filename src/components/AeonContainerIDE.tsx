@@ -1326,10 +1326,12 @@ export function App() {
         }
         appendCliEntry(`Latest receipts (${receipts.length}):`, 'ok');
         receipts.slice(0, 5).forEach((receipt) => {
+          const createdAtLabel =
+            receipt.created_at === undefined
+              ? 'unknown time'
+              : new Date(receipt.created_at).toLocaleTimeString();
           appendCliEntry(
-            `${receipt.event_type} by ${receipt.actor_did} @ ${new Date(
-              receipt.created_at
-            ).toLocaleTimeString()}`,
+            `${receipt.event_type} by ${receipt.actor_did} @ ${createdAtLabel}`,
             'info'
           );
         });

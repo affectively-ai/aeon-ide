@@ -66,18 +66,23 @@ function buildTree(files: FileEntry[]): TreeNode[] {
     for (let i = 0; i < parts.length; i++) {
       const isLast = i === parts.length - 1;
       const partName = parts[i];
+      if (!partName) {
+        continue;
+      }
       const partPath = '/' + parts.slice(0, i + 1).join('/');
 
-      let child = current.children.find((c) => c.name === partName);
-      if (!child) {
-        child = {
+      const existingChild = current.children.find((c) => c.name === partName);
+      const child =
+        existingChild ??
+        ({
           name: partName,
           path: partPath,
-          type: isLast ? file.type : 'directory',
+          type: isLast ? file.type ?? 'file' : 'directory',
           language: isLast ? file.language : undefined,
           dirty: isLast ? file.dirty : undefined,
           children: [],
-        };
+        } satisfies TreeNode);
+      if (!existingChild) {
         current.children.push(child);
       }
       current = child;
