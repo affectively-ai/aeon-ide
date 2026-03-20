@@ -185,10 +185,7 @@ declare namespace AeonIdePackageShims {
       engine: StreamedLintEngine;
       supportsWasm: boolean;
     }) => void;
-    onChunk?: (
-      diagnostics: StreamedLintDiagnostic[],
-      progress: number
-    ) => void;
+    onChunk?: (diagnostics: StreamedLintDiagnostic[], progress: number) => void;
     onDone?: (stats: StreamedLintStats) => void;
     onError?: (errorMessage: string) => void;
   }

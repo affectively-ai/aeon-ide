@@ -2,7 +2,7 @@
   "name": "@a0n/aeon-ide",
   "version": "5.0.0",
   "type": "module",
-  "description": "Aeon IDE \u2014 UI components and hooks for the Aeon Container execution environment",
+  "description": "Aeon IDE — UI components and hooks for the Aeon Container execution environment",
   "exports": {
     ".": "./src/index.ts",
     "./components/*": "./src/components/*.tsx",
@@ -10,7 +10,7 @@
     "./hooks/*": "./src/hooks/*.ts"
   },
   "scripts": {
-    "test": "bun ../../scripts/bun-isolated-runner.ts src --preload ../../bun.preload.ts"
+    "test": "gnode run ../../scripts/aeon-test.ts src --preload ../../bun.preload.ts"
   },
   "dependencies": {
     "@a0n/aeon-container": "workspace:*"

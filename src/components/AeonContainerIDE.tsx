@@ -2265,7 +2265,7 @@ export function App() {
             onEditorScroll={handleEditorScroll}
             onJumpToLine={jumpToLine}
             language={language}
-            />
+          />
           {lastTopologicalResult && language === 'gnosis' && (
             <div className="h-64 shrink-0 border-t border-[var(--aeon-border)] dark:border-zinc-800">
               <GnosisViz

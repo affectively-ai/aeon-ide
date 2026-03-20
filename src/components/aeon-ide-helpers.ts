@@ -47,7 +47,7 @@ export function getDefaultContent(path: string): string {
     case 'lua':
       return '-- Lua\n\nfunction main()\n  print("hello from aeon container")\nend\n\nmain()\n';
     case 'tla':
-      return '------------------------------ MODULE Spec ------------------------------\nEXTENDS Naturals\n\nVARIABLE x\n\nInit == x = 0\nNext == x\\\' = x + 1\nSpec == Init /\\ []Next\n\n=============================================================================\n';
+      return "------------------------------ MODULE Spec ------------------------------\nEXTENDS Naturals\n\nVARIABLE x\n\nInit == x = 0\nNext == x\\' = x + 1\nSpec == Init /\\ []Next\n\n=============================================================================\n";
     case 'json':
       return '{\n  "name": "aeon-container",\n  "version": "1.0.0"\n}\n';
     case 'md':
