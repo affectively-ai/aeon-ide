@@ -14,7 +14,7 @@
       "executor": "a0:run-commands",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "command": "gnode run ../../scripts/aeon-test.ts src --preload ../../bun.preload.ts",
+        "command": "bun ../../scripts/aeon-test.ts src --preload ../../bun.preload.ts",
         "cwd": "{workspaceRoot}/open-source/aeon-ide"
       }
     },
